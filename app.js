@@ -43,6 +43,22 @@ const numbers = document.querySelectorAll(".numbers");
 const operations = document.querySelectorAll(".operations");
 const equal = document.querySelector(".equal");
 const clear = document.querySelector(".clear");
+const buttons = document.querySelectorAll("button");
+
+let color = '';
+
+// adding a visual clicking effect
+buttons.forEach((button) => {
+  button.addEventListener("mousedown", (e) => {
+    color = e.target.style.backgroundColor;
+    e.target.style.backgroundColor = "lightgray";
+  });
+});
+buttons.forEach((button) => {
+  button.addEventListener("mouseup", (e) => {
+    e.target.style.backgroundColor = color;
+  });
+});
 
 // when a number gets clicked
 numbers.forEach((number) => {
